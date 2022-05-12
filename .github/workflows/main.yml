@@ -12,7 +12,7 @@ on:
 
         required: true
 
-        default: 5
+        default: 
 
         type: input
 
@@ -40,12 +40,12 @@ jobs:
 
         with:
 
-          python-version: '3.7'
+          python-version: '3.9'
 
       - name: Run python script
 
-        run: |
+        run: python mohit.py 10 14 12
 
           cd scripts
 
-          python $SCRIPT_NAME $NUMBER
+          python 
