@@ -3,7 +3,7 @@
 # If the remainder is 1, it is an odd number.
 
 import sys
-numbers=int(sys.argv[1])
+num=int(sys.argv[1])
 if (num % 2) == 0:
    print("{0} is Even".format(num))
 else:
