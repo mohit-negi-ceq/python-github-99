@@ -1,4 +1,4 @@
-name: Run Python script
+name: Python script
 
 on:
 
@@ -6,21 +6,21 @@ on:
 
     inputs:
 
-      EnterNumber:
+      Number:
 
-        description: 'Enter number/str to find number is even or odd'    
+        description: 'find if number is even or odd'    
 
         required: true
 
-        default: 5
+        default: 7
 
         type: input
 
 env:
 
-  SCRIPT_NAME: evenodd.py
+  SCRIPT_NAME: mohit.py
 
-  NUMBER: ${{ github.event.inputs.EnterNumber }}
+  NUMBER: ${{ github.event.inputs.Number }}
 
 jobs:
 
@@ -40,9 +40,9 @@ jobs:
 
         with:
 
-          python-version: '3.7'
+          python-version: '3.9'
 
-      - name: Run python script
+      - name: python script
 
         run: |
 
