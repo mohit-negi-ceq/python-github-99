@@ -1,101 +1,34 @@
-name: Run Python scriptname: Run Python script
-
+name: workflow-python-script
 on:
-
   workflow_dispatch:
-
     inputs:
-
-      EnterNumber:
-
-        description: 'Enter number/str to find number is even or odd'    
-
+      inpt:
+        description: 'num'
         required: true
-
-        default: 5
-
-        type: input
-
+        default: 'how many terms do you want to printed' 
+     
+  
 env:
-
-  SCRIPT_NAME: evenodd.py
-
-  NUMBER: ${{ github.event.inputs.EnterNumber }}
-
+  file: mohit.py 
+  num_1: ${{ github.event.inputs.inpt }}
+ 
+  
 jobs:
-
-  run-script:
-
+  check-python-version:
     runs-on: ubuntu-latest
-
-   
-
     steps:
-
-   
-
       - uses: actions/checkout@v3
-
       - uses: actions/setup-python@v3
-
         with:
-
           python-version: '3.7'
+      - name: python version
+        run: python --version
 
-      - name: Run python script
-
+    
+      - name: python script
         run: |
-
-          cd scripts
-
-          python $SCRIPT_NAME $NUMBERname: Run Python script
-
-on:
-
-  workflow_dispatch:
-
-    inputs:
-
-      EnterNumber:
-
-        description: 'Enter number/str to find number is even or odd'    
-
-        required: true
-
-        default: 5
-
-        type: input
-
-env:
-
-  SCRIPT_NAME: evenodd.py
-
-  NUMBER: ${{ github.event.inputs.EnterNumber }}
-
-jobs:
-
-  run-script:
-
-    runs-on: ubuntu-latest
-
-   
-
-    steps:
-
-   
-
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-python@v3
-
-        with:
-
-          python-version: '3.7'
-
-      - name: Run python script
-
-        run: |
-
-          cd scripts
-
-          python $SCRIPT_NAME $NUMBER
+          
+          python $file $num_1 
+          
+      
+      
