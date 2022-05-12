@@ -46,6 +46,4 @@ jobs:
 
         run: python mohit.py 10 14 12
 
-          cd scripts
-
-          python 
+        
