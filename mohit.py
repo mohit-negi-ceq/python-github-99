@@ -1,19 +1,9 @@
-# Python program to find the largest number among the three input numbers
+# Python program to check if the input number is odd or even.
+# A number is even if division by 2 gives a remainder of 0.
+# If the remainder is 1, it is an odd number.
 
-# change the values of num1, num2 and num3
-# for a different result
-num1 = 10
-num2 = 14
-num3 = 12
-
-# uncomment following lines to take three numbers from user
-#num1 = float(input("Enter first number: "))
-#num2 = float(input("Enter second number: "))
-#num3 = float(input("Enter third number: "))
-
-if (num1 >= num2) and (num1 >= num3):
-   largest = num1
-elif (num2 >= num1) and (num2 >= num3):
-   largest = num2
+num = int(input("Enter a number: "))
+if (num % 2) == 0:
+   print("{0} is Even".format(num))
 else:
-   largest = num3
+   print("{0} is Odd".format(num))

@@ -8,17 +8,17 @@ on:
 
       EnterNumber:
 
-        description: 'find the biggest number'    
+        description: 'Enter number/str to find number is even or odd'    
 
         required: true
 
-        default: 
+        default: 5
 
         type: input
 
 env:
 
-  SCRIPT_NAME: mohit.py
+  SCRIPT_NAME: evenodd.py
 
   NUMBER: ${{ github.event.inputs.EnterNumber }}
 
@@ -40,10 +40,12 @@ jobs:
 
         with:
 
-          python-version: '3.9'
+          python-version: '3.7'
 
       - name: Run python script
 
-        run: python mohit.py 10 14 12
+        run: |
 
-        
+          cd scripts
+
+          python $SCRIPT_NAME $NUMBER
