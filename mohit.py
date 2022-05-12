@@ -2,8 +2,7 @@
 # A number is even if division by 2 gives a remainder of 0.
 # If the remainder is 1, it is an odd number.
 import sys
-num1=sys.argv[7]
-num = int(input("Enter a number: "))
+num=sys.argv[7]
 if (num % 2) == 0:
    print("{0} is Even".format(num))
 else:

@@ -1,4 +1,4 @@
-name: Python script
+name: Run Python scriptname: Run Python script
 
 on:
 
@@ -6,21 +6,21 @@ on:
 
     inputs:
 
-      Number:
+      EnterNumber:
 
-        description: 'find if number is even or odd'    
+        description: 'Enter number/str to find number is even or odd'    
 
         required: true
 
-        default: 7
+        default: 5
 
         type: input
 
 env:
 
-  SCRIPT_NAME: mohit.py
+  SCRIPT_NAME: evenodd.py
 
-  NUMBER: ${{ github.event.inputs.Number }}
+  NUMBER: ${{ github.event.inputs.EnterNumber }}
 
 jobs:
 
@@ -40,9 +40,59 @@ jobs:
 
         with:
 
-          python-version: '3.9'
+          python-version: '3.7'
 
-      - name: python script
+      - name: Run python script
+
+        run: |
+
+          cd scripts
+
+          python $SCRIPT_NAME $NUMBERname: Run Python script
+
+on:
+
+  workflow_dispatch:
+
+    inputs:
+
+      EnterNumber:
+
+        description: 'Enter number/str to find number is even or odd'    
+
+        required: true
+
+        default: 5
+
+        type: input
+
+env:
+
+  SCRIPT_NAME: evenodd.py
+
+  NUMBER: ${{ github.event.inputs.EnterNumber }}
+
+jobs:
+
+  run-script:
+
+    runs-on: ubuntu-latest
+
+   
+
+    steps:
+
+   
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v3
+
+        with:
+
+          python-version: '3.7'
+
+      - name: Run python script
 
         run: |
 
